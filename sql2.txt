@@ -33,8 +33,8 @@ SELECT Customers.CustomerName, Products.ProductName, SUM(OrderDetails.Quantity) 
 FROM Customers
 JOIN Orders on Customers.CustomerID = Orders.CustomerID                                       
 JOIN OrderDetails on Orders.OrderID = OrderDetails.OrderID
-JOIN Products on OrderDetails.ProductID = Products. ProductID
-GROUP BY Customers.CustomerID, OrderDetails. ProductID; 
+JOIN Products on OrderDetails.ProductID = Products.ProductID
+GROUP BY Customers.CustomerID, Products.ProductID; 
 
 
 
@@ -47,8 +47,8 @@ SELECT Customers.CustomerName, Products.ProductName, SUM(OrderDetails.Quantity) 
 FROM Customers
 JOIN Orders on Customers.CustomerID = Orders.CustomerID                                       
 JOIN OrderDetails on Orders.OrderID = OrderDetails.OrderID
-JOIN Products on OrderDetails.ProductID = Products. ProductID
-GROUP BY Customers.CustomerID, OrderDetails. ProductID; 
+JOIN Products on OrderDetails.ProductID = Products.ProductID
+GROUP BY Customers.CustomerID, Products.ProductID; 
 
 
 5. Add a new Order to the Orders table.  You will have to specify the ID of an existing customer
@@ -63,7 +63,7 @@ Values (10448, 76, 4, "1996-7-10", 2);
 you will have to specify the ID of an existing product.  Paste your SQL statement below.
 
 INSERT INTO OrderDetails
-("OrderDetailID", "OrderID", "ProductID", "Quantity")    
+(OrderDetailID, OrderID, ProductID, Quantity)    
 Values (519, 10448, 1, 5),
 (520, 10448, 2, 4),
 (521, 10448, 3, 2); 
